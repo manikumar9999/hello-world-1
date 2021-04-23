@@ -27,6 +27,11 @@
       <name>Test Project Site</name>
       <url>file:///tmp/maven-project-site</url>
     </site>
+        <repository>
+             <id> nexus3</id>
+             <username>admin</username>
+             <password>mani</password>
+       </repository>
   </distributionManagement>
 
   <build>
