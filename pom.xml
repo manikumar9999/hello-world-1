@@ -29,8 +29,7 @@
     </site>
         <repository>
              <id> nexus3</id>
-             <username>admin</username>
-             <password>mani</password>
+                 <url>http://3.86.34.148:8081/</url>
        </repository>
   </distributionManagement>
 
