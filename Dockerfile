@@ -1,6 +1,6 @@
-# Pull base image 
-From tomcat:8-jre8 
-
-# Maintainer 
-MAINTAINER "valaxytech@gmail.com" 
-COPY ./webapp.war /usr/local/tomcat/webapps
+FROM centos:7
+MAINTAINER surgammanikumar@gmail.com
+RUN yum update -y && yum install httpd -y
+EXPOSE 80
+COPY index.html /var/www/html/
+CMD [“/usr/sbin/httpd”, “-D”, “FOREGROUND”]
