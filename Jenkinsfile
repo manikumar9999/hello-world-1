@@ -25,6 +25,9 @@ pipeline {
                     sh 'docker push manikumar99/me:1.6'
                 }
             }
+        stage('container creation'){
+            steps{
+                docker run -itd --name kumar -p 8080:8080 me:1.6
     }
     post{
         always{
