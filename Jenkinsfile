@@ -12,7 +12,7 @@ pipeline {
         }
         stage('docker build'){
             steps{
-                sh 'docker build -t manikumar99/k1234 .'
+                sh 'docker build -t manikumar99/manikumar143 .'
             }
         }
         stage('docker-login'){
@@ -22,14 +22,10 @@ pipeline {
             }
             stage('docker push'){
                 steps{
-                    sh 'docker push manikumar99/k1234'
+                    sh 'docker push manikumar99/manikumar143'
                 }
             }
-        stage('container creation'){
-            steps{
-               sh 'docker run -itd --name kumar123 -p 8080:8080 k1234'
-    }
-        }
+        
     }
     post{
         always{
