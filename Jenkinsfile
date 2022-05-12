@@ -25,6 +25,11 @@ pipeline {
                     sh 'docker push manikumar99/manikumar143:7.0'
                 }
             }
+    stage('docker container'){
+            steps{
+               sh 'docker run -itd -p 8081:8080 manikumar143:7.0'
+            }   
+    }
     }
     post{
         always{
