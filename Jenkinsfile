@@ -27,7 +27,7 @@ pipeline {
             }
         stage('docker container'){
             steps{
-                sh 'docker run -itd --name kumar1234 -p 8080:8080 manikumar132'
+                sh 'docker run -itd --name kumar1234 -p 8080:8080 manikumar143'
             }   
     }
     }
