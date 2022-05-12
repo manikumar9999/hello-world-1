@@ -25,7 +25,7 @@ pipeline {
                     sh 'docker push manikumar99/manikumar7.0'
                 }
             }
-        
+    }
     post{
         always{
             sh 'docker logout'
