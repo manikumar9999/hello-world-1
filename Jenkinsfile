@@ -22,7 +22,7 @@ pipeline {
             }
             stage('docker push'){
                 steps{
-                    sh 'docker push manikumar99/manikumar:7.0'
+                    sh 'docker push manikumar99/manikumar143:7.0'
                 }
             }
     }
