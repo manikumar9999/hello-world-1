@@ -12,7 +12,7 @@ pipeline {
         }
         stage('docker build'){
             steps{
-                sh 'docker build -t manikumar99/manikumar143 .'
+                sh 'docker build -t manikumar99/manikumar143:7.0 .'
             }
         }
         stage('docker-login'){
@@ -22,15 +22,10 @@ pipeline {
             }
             stage('docker push'){
                 steps{
-                    sh 'docker push manikumar99/manikumar143'
+                    sh 'docker push manikumar99/manikumar7.0'
                 }
             }
-        stage('docker container'){
-            steps{
-                sh 'docker run -itd --name kumar1234 -p 8080:8080 manikumar143'
-            }   
-    }
-    }
+        
     post{
         always{
             sh 'docker logout'
