@@ -39,7 +39,7 @@ pipeline {
             }
             stage('docker-container'){
                 steps{
-                    sh 'docker run -itd --name i811 -p 90:80 manikumar99/mnk'
+                    sh 'docker run -itd --name i8112 -p 90:80 manikumar99/mnk'
                 }
             }
     }
