@@ -1,8 +1,7 @@
-FROM ubuntu:latest
-ENV TZ=Asia/Kolkata
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ> /etc/timezone
-RUN apt-get update -y && apt install apache2 -y
-ADD .  /var/www/html/
-ENTRYPOINT apache2ctl -D FOREGROUND
-ENV Manikumar suragam
+FROM centos:latest
+MAINTAINER manikumar@gmail.com
+RUN yum -y install httpd
+COPY index.html /var/www/html/
+CMD [“/usr/sbin/httpd”, “-D”, “FOREGROUND”]
+
 EXPOSE 80
