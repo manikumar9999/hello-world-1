@@ -1,8 +1,3 @@
 FROM centos:7
-MAINTAINER manikumar@gmail.com
-RUN yum -y install httpd
-ADD . /var/www/html/
-ENTRYPOINT httptdctl -D FOREGROUND
-ENV Manikumar suragam
-
+RUN yum -y install httpd; yum clean all; systemctl enable httpd.service
 EXPOSE 80
