@@ -1,0 +1,21 @@
+---
+ - hosts: webserver
+   become: true
+   tasks:
+     - name: installing httpd
+       yum:
+        name: httpd
+        state: present
+     - name: service start
+       service:
+         name: httpd
+         state: started
+         enabled: yes
+     - name: copying index.html
+       copy:
+         src: index.html
+         dest: /var/www/html/index.html
+     - name: restart service
+       service:
+         name: httpd
+         state: restarted
