@@ -4,7 +4,7 @@ pipeline {
         DOCKERHUB_CREDENTIALS=credentials('docker-hub')
     }
     tools{
-        maven 'maven-3.8.6'
+        maven 'maven-3.8.7'
     }
     stages{
         stage('git clone'){
@@ -17,11 +17,7 @@ pipeline {
                 sh 'mvn clean install package'
             }
         }
-        stage('deploy'){
-            steps{
-                deploy adapters: [tomcat9(credentialsId: 'mk', path: '', url: 'http://34.201.116.17:8090/')], contextPath: null, war: '**/*.war'
-            }
-        }
+       
         stage('docker build'){
             steps{
                 sh 'docker build -t manikumar99/mnk .'
