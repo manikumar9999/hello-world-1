@@ -4,7 +4,7 @@ pipeline {
         DOCKERHUB_CREDENTIALS=credentials('mani123')
     }
     tools{
-        maven 'maven-3.8.7'
+        maven 'maven-3.9.4'
     }
     stages{
         stage('git clone'){
