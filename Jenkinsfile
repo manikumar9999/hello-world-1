@@ -35,7 +35,7 @@ pipeline {
             }
             stage('docker-container'){
                 steps{
-                    sh 'docker run -itd --name i811212 -p 809:80 manikumar99/mnk'
+                    sh 'docker run -itd --name i8112112 -p 801:80 manikumar99/mnnk'
                 }
             }
     }
