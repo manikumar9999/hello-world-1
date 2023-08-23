@@ -20,7 +20,7 @@ pipeline {
        
         stage('docker build'){
             steps{
-                sh 'docker build -t manikumar99/mnnk .'
+                sh 'docker build -t mr .'
             }
         }
         stage('docker-login'){
@@ -30,12 +30,12 @@ pipeline {
             }
             stage('docker push'){
                 steps{
-                    sh 'docker push manikumar99/mnnk'
+                    sh 'docker push manikumar99/mr'
                 }
             }
             stage('docker-container'){
                 steps{
-                    sh 'docker run -itd --name i81121112 -p 802:80 manikumar99/mnnk'
+                    sh 'docker run -itd --name i81121112 -p 802:80 manikumar99/mr'
                 }
             }
     }
