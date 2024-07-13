@@ -4,7 +4,7 @@ pipeline {
         DOCKERHUB_CREDENTIALS=credentials('mani143')
     }
     tools{
-        maven 'maven-3.9.4'
+        maven 'maven'
     }
     stages{
         stage('git clone'){
@@ -20,7 +20,7 @@ pipeline {
        
         stage('docker build'){
             steps{
-                sh 'docker build -t mnnk .'
+                sh 'docker build -t mk09 .'
             }
         }
         stage('docker-login'){
@@ -30,12 +30,12 @@ pipeline {
             }
             stage('docker push'){
                 steps{
-                    sh 'docker push manikumar99/mnnk'
+                    sh 'docker push manikumar99/mk09'
                 }
             }
             stage('docker-container'){
                 steps{
-                    sh 'docker run -itd --name i811211112 -p 803:80 manikumar99/mnnk'
+                    sh 'docker run -itd --name i8 -p 807:80 manikumar99/mk09'
                 }
             }
     }
