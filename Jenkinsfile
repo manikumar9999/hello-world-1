@@ -17,6 +17,11 @@ pipeline {
                 sh 'mvn clean install package'
             }
         }
+        stage('deploy'){
+            steps{
+                deploy adapters: [tomcat9(credentialsId: 'hi', path: '', url: 'http://35.153.211.170:8060')], contextPath: null, war: '**/*.war'
+            }
+        }
        
         stage('docker build'){
             steps{
